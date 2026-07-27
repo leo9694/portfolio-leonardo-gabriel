@@ -85,14 +85,14 @@ export const projects = [
 export const experiences = [
   {
     company: "Norte Sul Sementes",
-    period: "2 anos",
+    period: "04/2024 — Atual",
     role: "Desenvolvedor de Sistemas / Analista de TI",
     description:
       "Desenvolvimento e personalização de sistemas internos e CRM, integrações com a API do ERP Sankhya, WhatsApp, bancos de dados e plataformas externas, além de automações para rotinas administrativas, comerciais e operacionais.",
   },
   {
     company: "WebTech",
-    period: "08/2021 — 2022",
+    period: "08/2021 — 01/2023",
     role: "Programador Web",
     description:
       "Desenvolvimento e manutenção de sistemas de compensação previdenciária utilizados pelos estados do Rio Grande do Norte e Pará, utilizando Ruby on Rails, JavaScript, PostgreSQL, SQL, Bootstrap e AWS.",
