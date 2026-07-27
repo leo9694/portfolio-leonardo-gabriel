@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import {
   ArrowDownToLine, ArrowRight, ArrowUp, BriefcaseBusiness, CalendarDays,
-  Check, ExternalLink, GraduationCap, Mail,
+  Check, ChevronLeft, ChevronRight, ExternalLink, GraduationCap, Mail,
   MapPin, Menu, MessageCircle, Rocket, UserRound, X,
 } from "lucide-react";
 import {
@@ -15,6 +15,11 @@ import { SectionHeading } from "./SectionHeading";
 export function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("inicio");
+  const [imageModal, setImageModal] = useState<{
+    title: string;
+    images: string[];
+    index: number;
+  } | null>(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("main section[id]");
@@ -30,7 +35,45 @@ export function Portfolio() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!imageModal) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setImageModal(null);
+      if (event.key === "ArrowLeft") {
+        setImageModal((current) => current && ({
+          ...current,
+          index: (current.index - 1 + current.images.length) % current.images.length,
+        }));
+      }
+      if (event.key === "ArrowRight") {
+        setImageModal((current) => current && ({
+          ...current,
+          index: (current.index + 1) % current.images.length,
+        }));
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imageModal]);
+
   const closeMenu = () => setMenuOpen(false);
+  const openProjectImage = (
+    project: (typeof projects)[number],
+    index: number,
+  ) => {
+    const images = Array.isArray(project.cover)
+      ? project.cover
+      : project.cover
+        ? [project.cover]
+        : [];
+    if (images.length) setImageModal({ title: project.title, images, index });
+  };
 
   return (
     <>
@@ -174,7 +217,12 @@ export function Portfolio() {
               {projects.map((project, index) => (
                 <article className="project-card" key={project.title}>
                   <span className="project-number">0{index + 1}</span>
-                  <ProjectVisual type={project.type} cover={project.cover} title={project.title} />
+                  <ProjectVisual
+                    type={project.type}
+                    cover={project.cover}
+                    title={project.title}
+                    onOpen={(imageIndex) => openProjectImage(project, imageIndex)}
+                  />
                   <div className="project-content">
                     <div className="project-title-row">
                       <h3>{project.title}</h3>
@@ -240,6 +288,72 @@ export function Portfolio() {
           </div>
         </section>
       </main>
+
+      {imageModal && (
+        <div
+          className="image-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="image-modal-title"
+          onClick={() => setImageModal(null)}
+        >
+          <div className="image-modal-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="image-modal-header">
+              <div>
+                <span>Visualização do projeto</span>
+                <h2 id="image-modal-title">{imageModal.title}</h2>
+              </div>
+              <button
+                type="button"
+                className="image-modal-close"
+                onClick={() => setImageModal(null)}
+                aria-label="Fechar imagem ampliada"
+                autoFocus
+              >
+                <X />
+              </button>
+            </div>
+            <div className="image-modal-stage">
+              {imageModal.images.length > 1 && (
+                <button
+                  type="button"
+                  className="image-modal-nav image-modal-nav--previous"
+                  onClick={() => setImageModal((current) => current && ({
+                    ...current,
+                    index: (current.index - 1 + current.images.length) % current.images.length,
+                  }))}
+                  aria-label="Imagem anterior"
+                >
+                  <ChevronLeft />
+                </button>
+              )}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imageModal.images[imageModal.index]}
+                alt={`${imageModal.title} - imagem ampliada ${imageModal.index + 1}`}
+              />
+              {imageModal.images.length > 1 && (
+                <button
+                  type="button"
+                  className="image-modal-nav image-modal-nav--next"
+                  onClick={() => setImageModal((current) => current && ({
+                    ...current,
+                    index: (current.index + 1) % current.images.length,
+                  }))}
+                  aria-label="Próxima imagem"
+                >
+                  <ChevronRight />
+                </button>
+              )}
+            </div>
+            {imageModal.images.length > 1 && (
+              <div className="image-modal-counter" aria-live="polite">
+                {imageModal.index + 1} / {imageModal.images.length}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <footer>
         <div className="container footer-inner">

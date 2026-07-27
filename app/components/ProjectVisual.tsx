@@ -1,22 +1,28 @@
-import { Check, MessageCircle } from "lucide-react";
+import { Check, Maximize2, MessageCircle } from "lucide-react";
 
 type ProjectVisualProps = {
   type: string;
   cover?: string | string[];
   title: string;
+  onOpen?: (index: number) => void;
 };
 
-export function ProjectVisual({ type, cover, title }: ProjectVisualProps) {
+export function ProjectVisual({ type, cover, title, onOpen }: ProjectVisualProps) {
   if (Array.isArray(cover)) {
     return (
       <div className="project-visual project-visual--mobile-covers">
         {cover.map((image, index) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <button
             key={image}
-            src={image}
-            alt={`${title} - tela ${index + 1}`}
-          />
+            className="project-cover-trigger"
+            type="button"
+            onClick={() => onOpen?.(index)}
+            aria-label={`Ampliar ${title} - tela ${index + 1}`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={image} alt={`${title} - tela ${index + 1}`} />
+            <span className="cover-zoom" aria-hidden="true"><Maximize2 /></span>
+          </button>
         ))}
       </div>
     );
@@ -24,10 +30,16 @@ export function ProjectVisual({ type, cover, title }: ProjectVisualProps) {
 
   if (cover) {
     return (
-      <div className="project-visual project-visual--cover">
+      <button
+        className="project-visual project-visual--cover"
+        type="button"
+        onClick={() => onOpen?.(0)}
+        aria-label={`Ampliar imagem do projeto ${title}`}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={cover} alt={`Tela do projeto ${title}`} />
-      </div>
+        <span className="cover-zoom" aria-hidden="true"><Maximize2 /></span>
+      </button>
     );
   }
 
