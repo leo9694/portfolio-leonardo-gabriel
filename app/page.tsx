@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Portfolio } from "./components/Portfolio";
 
 export const metadata: Metadata = {
-  title: "Leonardo Gabriel | Desenvolvedor Full Stack",
+  title: "Leonardo Gabriel | Desenvolvedor de Sistemas e Analista de TI",
   description:
-    "Portfólio de Leonardo Gabriel, Desenvolvedor Full Stack especializado em aplicações web, integrações e automação.",
+    "Portfólio de Leonardo Gabriel, profissional de TI com experiência em desenvolvimento web, integrações de sistemas, CRM e automação.",
 };
 
 export default function Home() {

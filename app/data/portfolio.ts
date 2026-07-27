@@ -1,15 +1,16 @@
 import {
   Braces,
+  Cloud,
   Code2,
   Database,
   FileCode2,
   GitBranch,
+  Globe2,
   Layers3,
   Network,
   Palette,
   Server,
   Smartphone,
-  Terminal,
 } from "lucide-react";
 
 export const navigation = [
@@ -28,9 +29,14 @@ export const skills = [
   { name: "TypeScript", icon: Code2 },
   { name: "React", icon: Layers3 },
   { name: "Node.js", icon: Server },
-  { name: "Python", icon: Terminal },
+  { name: "Ruby on Rails", icon: Code2 },
   { name: "PHP", icon: Code2 },
+  { name: "WordPress", icon: Globe2 },
+  { name: "Bootstrap", icon: Palette },
+  { name: "PostgreSQL", icon: Database },
   { name: "MySQL", icon: Database },
+  { name: "AWS", icon: Cloud },
+  { name: "APIs REST", icon: Network },
   { name: "Git", icon: GitBranch },
   { name: "API Sankhya", icon: Network },
 ];
@@ -79,30 +85,44 @@ export const projects = [
 export const experiences = [
   {
     company: "Norte Sul Sementes",
-    period: "2022 — Atual",
-    role: "Desenvolvedor Full Stack",
+    period: "2 anos",
+    role: "Desenvolvedor de Sistemas / Analista de TI",
     description:
-      "Desenvolvimento de sistemas internos, integrações com API Sankhya, criação e personalização de CRM, integrações com WhatsApp e automações.",
+      "Desenvolvimento e personalização de sistemas internos e CRM, integrações com a API do ERP Sankhya, WhatsApp, bancos de dados e plataformas externas, além de automações para rotinas administrativas, comerciais e operacionais.",
   },
   {
     company: "WebTech",
-    period: "2021 — 2022",
-    role: "Estagiário Desenvolvedor",
+    period: "08/2021 — 2022",
+    role: "Programador Web",
     description:
-      "Desenvolvimento de aplicações web com Ruby on Rails, JavaScript, PostgreSQL e deploy na AWS.",
+      "Desenvolvimento e manutenção de sistemas de compensação previdenciária utilizados pelos estados do Rio Grande do Norte e Pará, utilizando Ruby on Rails, JavaScript, PostgreSQL, SQL, Bootstrap e AWS.",
   },
   {
-    company: "UFMT",
-    period: "2019 — 2021",
-    role: "Estagiário Desenvolvedor",
+    company: "WebTech",
+    period: "11/2020 — 08/2021",
+    role: "Estagiário de Desenvolvimento Web",
     description:
-      "Desenvolvimento de sistemas e sites com PHP, HTML, CSS, Bootstrap e WordPress.",
+      "Apoio no desenvolvimento, testes e manutenção de sistemas de compensação previdenciária com Ruby on Rails, JavaScript, PostgreSQL e Bootstrap.",
+  },
+  {
+    company: "EIT — UFMT",
+    period: "04/2019 — 09/2021",
+    role: "Estagiário de Desenvolvimento Web",
+    description:
+      "Desenvolvimento e manutenção de portal institucional em WordPress, com publicação de notícias, notificações, cadastro de e-mails, carrosséis e linha do tempo.",
+  },
+  {
+    company: "PRAE — UFMT",
+    period: "04/2017 — 09/2018",
+    role: "Estagiário de Desenvolvimento Web",
+    description:
+      "Levantamento de necessidades e desenvolvimento autônomo de um sistema para cadastro de alunos e análise de perfis utilizando PHP, HTML, Bootstrap e MySQL.",
   },
 ];
 
 export const socialLinks = {
   github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/leonardo-gabriel-42a861210",
   instagram: "https://www.instagram.com/",
   email: "mailto:leop.gabriel9@gmail.com",
   whatsapp:

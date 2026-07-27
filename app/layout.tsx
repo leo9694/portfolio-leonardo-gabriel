@@ -14,20 +14,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://leonardogabriel.dev"),
-  title: "Leonardo Gabriel | Desenvolvedor Full Stack",
+  title: "Leonardo Gabriel | Desenvolvedor de Sistemas e Analista de TI",
   description:
-    "Aplicações web modernas, integrações, APIs, CRM e automação de processos.",
+    "Desenvolvimento web, integrações de sistemas, CRM e automação de processos.",
   openGraph: {
-    title: "Leonardo Gabriel | Desenvolvedor Full Stack",
-    description: "Aplicações web, integrações e automação.",
+    title: "Leonardo Gabriel | Desenvolvedor de Sistemas e Analista de TI",
+    description: "Desenvolvimento web, integrações de sistemas, CRM e automação.",
     type: "website",
     locale: "pt_BR",
     images: [{ url: "/og.png", width: 1792, height: 1024, alt: "Leonardo Gabriel — Desenvolvedor Full Stack" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leonardo Gabriel | Desenvolvedor Full Stack",
-    description: "Aplicações web, integrações e automação.",
+    title: "Leonardo Gabriel | Desenvolvedor de Sistemas e Analista de TI",
+    description: "Desenvolvimento web, integrações de sistemas, CRM e automação.",
     images: ["/og.png"],
   },
   icons: {

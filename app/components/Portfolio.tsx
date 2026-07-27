@@ -119,10 +119,11 @@ export function Portfolio() {
             <div className="hero-copy reveal">
               <span className="hero-kicker">Olá, eu sou</span>
               <h1>Leonardo <span>Gabriel</span></h1>
-              <p className="hero-role">Desenvolvedor Full Stack</p>
+              <p className="hero-role">Desenvolvedor de Sistemas • Analista de TI</p>
               <p className="hero-description">
-                Desenvolvo aplicações web modernas, rápidas e responsivas, com foco em
-                experiência do usuário, integrações e automação de processos.
+                Desenvolvo e personalizo sistemas web, integrações e automações,
+                conectando aplicações, ERPs, bancos de dados e plataformas externas às
+                necessidades reais do negócio.
               </p>
               <div className="hero-actions">
                 <a className="button button--primary" href="#projetos">
@@ -143,7 +144,7 @@ export function Portfolio() {
               <div className="portrait-card">
                 {profile.photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={profile.photo} alt="Leonardo Gabriel, Desenvolvedor Full Stack" />
+                  <img src={profile.photo} alt="Leonardo Gabriel, Desenvolvedor de Sistemas e Analista de TI" />
                 ) : (
                   <div className="portrait-placeholder">
                     <UserRound size={88} strokeWidth={1} />
@@ -171,9 +172,10 @@ export function Portfolio() {
             <div className="about-copy reveal">
               <SectionHeading eyebrow="Sobre mim" title="Quem sou eu?" />
               <p>
-                Sou desenvolvedor Full Stack apaixonado por tecnologia e por criar
-                soluções que fazem a diferença. Tenho experiência com desenvolvimento de
-                sistemas, integrações, APIs, CRM e automação de processos.
+                Sou profissional de Tecnologia da Informação com experiência em
+                desenvolvimento web, integrações de sistemas, automação de processos e
+                personalização de soluções empresariais. Tenho perfil proativo,
+                facilidade para aprender, pensamento analítico e foco em melhoria contínua.
               </p>
               <div className="about-signature"><span />Tecnologia com propósito</div>
             </div>
@@ -185,10 +187,10 @@ export function Portfolio() {
                 <MapPin /><strong>Jaciara — MT</strong><span>Localização</span>
               </article>
               <article className="stat-card">
-                <GraduationCap /><strong>Técnico em Desenvolvimento de Sistemas</strong><span>Formação</span>
+                <GraduationCap /><strong>Técnico em Informática • Ciência da Computação (incompleto)</strong><span>Formação</span>
               </article>
               <article className="stat-card">
-                <Rocket /><strong>Focado em resultados e inovação</strong><span>Mindset</span>
+                <Rocket /><strong>Proativo, analítico e focado em soluções</strong><span>Mindset</span>
               </article>
             </div>
           </div>
