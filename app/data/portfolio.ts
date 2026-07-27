@@ -110,7 +110,7 @@ export const socialLinks = {
 };
 
 export const profile = {
-  photo: "",
+  photo: "/leonardo-gabriel.png",
   cv: "/curriculo-leonardo-gabriel.pdf",
 };
 
