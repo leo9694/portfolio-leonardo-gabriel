@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import {
   ArrowDownToLine, ArrowRight, ArrowUp, BriefcaseBusiness, CalendarDays,
-  Camera, Check, ExternalLink, GitBranch, GraduationCap, Link, Mail,
+  Check, ExternalLink, GraduationCap, Mail,
   MapPin, Menu, MessageCircle, Rocket, UserRound, X,
 } from "lucide-react";
 import {
@@ -86,10 +86,8 @@ export function Portfolio() {
                 </a>
               </div>
               <div className="socials" aria-label="Redes sociais">
-                <a href={socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub"><GitBranch /></a>
-                <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Link /></a>
-                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><Camera /></a>
                 <a href={socialLinks.email} aria-label="E-mail"><Mail /></a>
+                <a href={socialLinks.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle /></a>
               </div>
             </div>
 
@@ -134,7 +132,7 @@ export function Portfolio() {
             </div>
             <div className="stats-grid reveal reveal--delay">
               <article className="stat-card">
-                <CalendarDays /><strong>2+</strong><span>Anos de experiência</span>
+                <CalendarDays /><strong>5+</strong><span>Anos de experiência</span>
               </article>
               <article className="stat-card">
                 <MapPin /><strong>Jaciara — MT</strong><span>Localização</span>
@@ -176,7 +174,7 @@ export function Portfolio() {
               {projects.map((project, index) => (
                 <article className="project-card" key={project.title}>
                   <span className="project-number">0{index + 1}</span>
-                  <ProjectVisual type={project.type} />
+                  <ProjectVisual type={project.type} cover={project.cover} title={project.title} />
                   <div className="project-content">
                     <div className="project-title-row">
                       <h3>{project.title}</h3>

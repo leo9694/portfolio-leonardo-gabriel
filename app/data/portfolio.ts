@@ -42,6 +42,7 @@ export const projects = [
       "Sistema de gestão e soluções digitais para uma distribuidora de sementes.",
     technologies: ["React", "Node.js", "MySQL"],
     type: "dashboard",
+    cover: "/projeto-norte-sul.png",
     href: "#contato",
   },
   {
@@ -50,6 +51,7 @@ export const projects = [
       "Aplicativo para controle e contagem de estoque com leitura de código de barras.",
     technologies: ["React Native", "API", "MySQL"],
     type: "mobile",
+    cover: undefined,
     href: "#contato",
   },
   {
@@ -58,6 +60,7 @@ export const projects = [
       "Bot inteligente para atendimento, busca de produtos e automação de mensagens.",
     technologies: ["Node.js", "Baileys", "API Sankhya"],
     type: "bot",
+    cover: undefined,
     href: "#contato",
   },
 ];

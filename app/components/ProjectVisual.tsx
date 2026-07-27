@@ -1,6 +1,21 @@
 import { Check, MessageCircle } from "lucide-react";
 
-export function ProjectVisual({ type }: { type: string }) {
+type ProjectVisualProps = {
+  type: string;
+  cover?: string;
+  title: string;
+};
+
+export function ProjectVisual({ type, cover, title }: ProjectVisualProps) {
+  if (cover) {
+    return (
+      <div className="project-visual project-visual--cover">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={cover} alt={`Tela do projeto ${title}`} />
+      </div>
+    );
+  }
+
   if (type === "mobile") {
     return (
       <div className="project-visual visual-mobile" aria-hidden="true">
