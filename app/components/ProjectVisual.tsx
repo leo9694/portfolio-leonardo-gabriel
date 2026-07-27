@@ -2,11 +2,26 @@ import { Check, MessageCircle } from "lucide-react";
 
 type ProjectVisualProps = {
   type: string;
-  cover?: string;
+  cover?: string | string[];
   title: string;
 };
 
 export function ProjectVisual({ type, cover, title }: ProjectVisualProps) {
+  if (Array.isArray(cover)) {
+    return (
+      <div className="project-visual project-visual--mobile-covers">
+        {cover.map((image, index) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={image}
+            src={image}
+            alt={`${title} - tela ${index + 1}`}
+          />
+        ))}
+      </div>
+    );
+  }
+
   if (cover) {
     return (
       <div className="project-visual project-visual--cover">

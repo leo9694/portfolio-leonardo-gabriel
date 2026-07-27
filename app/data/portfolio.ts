@@ -51,7 +51,10 @@ export const projects = [
       "Aplicativo para controle e contagem de estoque com leitura de código de barras.",
     technologies: ["React Native", "API", "MySQL"],
     type: "mobile",
-    cover: undefined,
+    cover: [
+      "/app-estoque-separacao.png",
+      "/app-estoque-confirmacao.png",
+    ],
     href: "#contato",
   },
   {
