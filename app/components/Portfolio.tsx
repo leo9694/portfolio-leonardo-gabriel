@@ -67,12 +67,16 @@ export function Portfolio() {
     project: (typeof projects)[number],
     index: number,
   ) => {
-    const images = Array.isArray(project.cover)
+    const coverImages = Array.isArray(project.cover)
       ? project.cover
       : project.cover
         ? [project.cover]
         : [];
-    if (images.length) setImageModal({ title: project.title, images, index });
+    const images = project.gallery ?? coverImages;
+    const initialIndex = project.gallery ? 0 : index;
+    if (images.length) {
+      setImageModal({ title: project.title, images, index: initialIndex });
+    }
   };
 
   return (

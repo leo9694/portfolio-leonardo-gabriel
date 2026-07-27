@@ -43,6 +43,12 @@ export const projects = [
     technologies: ["React", "Node.js", "MySQL"],
     type: "dashboard",
     cover: "/projeto-norte-sul.png",
+    gallery: [
+      "/projeto-norte-sul.png",
+      "/norte-sul-fila-conferencia.png",
+      "/norte-sul-conferencia-pedido.png",
+      "/norte-sul-pedido-conferido.png",
+    ],
     href: "#contato",
   },
   {
@@ -55,6 +61,7 @@ export const projects = [
       "/app-estoque-separacao.png",
       "/app-estoque-confirmacao.png",
     ],
+    gallery: undefined,
     href: "#contato",
   },
   {
@@ -64,6 +71,7 @@ export const projects = [
     technologies: ["Node.js", "Baileys", "API Sankhya"],
     type: "bot",
     cover: undefined,
+    gallery: undefined,
     href: "#contato",
   },
 ];
