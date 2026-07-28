@@ -187,7 +187,7 @@ export function Portfolio() {
                 <MapPin /><strong>Jaciara — MT</strong><span>Localização</span>
               </article>
               <article className="stat-card">
-                <GraduationCap /><strong>Técnico em Informática • Ciência da Computação (incompleto)</strong><span>Formação</span>
+                <GraduationCap /><strong>Ciência da Computação — UFMT</strong><span>Formação</span>
               </article>
               <article className="stat-card">
                 <Rocket /><strong>Proativo, analítico e focado em soluções</strong><span>Mindset</span>
